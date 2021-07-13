@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Section = styled.section`
-  margin-top: 2em;
+  margin: 2.125em 0;
   text-align: center;
 
   h2 {

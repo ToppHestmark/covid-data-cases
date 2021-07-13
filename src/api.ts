@@ -19,7 +19,5 @@ export const feetchCovidData = async (
     throw new Error("Something went wrong when fetching data!");
   }
 
-  const json = await res.json();
-
-  return await json;
+  return await res.json();
 };

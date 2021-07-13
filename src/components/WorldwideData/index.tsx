@@ -10,11 +10,11 @@ import { formatLargeNum } from "../../utils/formatNum";
 
 import { CovidData } from "../../api.models";
 
-interface Props {
+type WorldwideDataProps = {
   worldwideData: CovidData[];
-}
+};
 
-const WorldwideData: React.FC<Props> = ({ worldwideData }) => {
+const WorldwideData: React.FC<WorldwideDataProps> = ({ worldwideData }) => {
   const worldData = worldwideData[0];
 
   return (
