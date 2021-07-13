@@ -1,27 +1,26 @@
 import React, { useState, useEffect } from "react";
+import { Header, WorldwideData } from "./components";
 
-import { CovidData } from "./api";
+import { CovidData } from "./api.models";
 import { feetchCovidData } from "./api";
 
 const App: React.FC = () => {
-  const [continent, setContinent] = useState<CovidData[]>({} as CovidData[]);
-
-  feetchCovidData("world");
+  const [worldData, setWorldData] = useState<CovidData[]>({} as CovidData[]);
 
   useEffect(() => {
-    const fetchFromApi = async () => {
+    const fetchWorldDataFromApi = async () => {
       const result = await feetchCovidData("world");
-      setContinent(result);
+      setWorldData(result);
     };
 
-    fetchFromApi();
+    fetchWorldDataFromApi();
   }, []);
 
   return (
-    <div>
-      <h1>Hello Covid</h1>
-      {continent.map((con) => console.log(con.ActiveCases))}
-    </div>
+    <>
+      <Header text="Covid-19 Data and Cases" />
+      <WorldwideData worldwideData={worldData} />
+    </>
   );
 };
 
