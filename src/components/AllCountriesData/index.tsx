@@ -16,8 +16,10 @@ type AllCountriesDataProps = {
 const AllCountriesData = ({ allCountriesData }: AllCountriesDataProps) => {
   const [search, setSearch] = useState("");
 
-  const filteredCountriesData: CovidData[] = allCountriesData.filter((con) =>
-    con.Country.toLowerCase().includes(search.toLowerCase())
+  const filteredCountriesData: CovidData[] = allCountriesData.filter(
+    (con) =>
+      con.Country.toLowerCase().includes(search.toLowerCase()) ||
+      con.Continent.toLowerCase().includes(search.toLowerCase())
   );
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -31,7 +33,7 @@ const AllCountriesData = ({ allCountriesData }: AllCountriesDataProps) => {
       <SearchBox>
         <input
           type="text"
-          placeholder="Search countries"
+          placeholder="Search countries or continents"
           onChange={handleChange}
         />
       </SearchBox>
@@ -68,9 +70,9 @@ const AllCountriesData = ({ allCountriesData }: AllCountriesDataProps) => {
             if (country?.rank === 0) return "";
 
             return (
-              <tr key={country?.id}>
+              <tr key={country.id}>
                 <td> {country?.rank} </td>
-                <td className="spacing"> {country?.Country} </td>
+                <td className="spacing"> {country.Country} </td>
                 <td className="spacing">
                   {formatLargeNum(country?.TotalCases)}
                 </td>
