@@ -1,9 +1,9 @@
 # Covid-19 data and cases
 
-[Demo app](https://covid-data-and-cases.web.app/)
+Deployed to Firebase: [Demo app](https://covid-data-and-cases.web.app/)
 
 The main purpose for this repo was to demonstrate my ability to extracting data from an API in a short timeframe, so the focus for this app is API data. <br />
-Responsiveness were not considered in this case.
+<strong>Responsiveness were not considered in this case.</strong>
 
 API Source: [VACCOVID - RapidAPI](https://rapidapi.com/vaccovidlive-vaccovidlive-default/api/vaccovid-coronavirus-vaccine-and-treatment-tracker/)
 

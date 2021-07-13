@@ -1,4 +1,4 @@
-export interface CovidData {
+export type CovidData = {
   id: string;
   rank: number;
   Country: string;
@@ -22,4 +22,4 @@ export interface CovidData {
   Serious_Critical: number;
   Tests_1M_Pop: number;
   TotCases_1M_Pop: number;
-}
+};

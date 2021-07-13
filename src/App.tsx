@@ -5,9 +5,9 @@ import { CovidData } from "./api.models";
 import { feetchCovidData } from "./api";
 
 const App: React.FC = () => {
-  const [worldData, setWorldData] = useState<CovidData[]>({} as CovidData[]);
+  const [worldData, setWorldData] = useState<CovidData[]>([] as CovidData[]);
   const [allCountriesData, setAllCountriesData] = useState<CovidData[]>(
-    {} as CovidData[]
+    [] as CovidData[]
   );
 
   useEffect(() => {
